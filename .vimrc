@@ -1,3 +1,34 @@
+" Try to load minpac
+packadd minpac
+" packadd! onedark.vim
+
+if !exists('g:loaded_minpac')
+    " minpac is not available.
+    " Settings for plugin-less environment
+    ...
+else
+    " minpac is available
+    call minpac#init()
+    call minpac#add('k-takata/minpac', {'type' : 'opt'})
+    
+    " Additional plugins here
+    call minpac#add('joshdick/onedark.vim')
+    call minpac#add('itchyny/lightline.vim')
+    call minpac#add('majutsushi/Tagbar')
+    call minpac#add('preservim/nerdtree')
+    
+    " Plugin setting here
+
+endif
+
+" Define user commands for updating/cleaning the plugins.
+if has('eval')
+    "Minpac commands
+    command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do' : 'call minpac#status()'})
+    command! PackClean packadd minpac | source $MYVIMRC | call minpac#clean()
+    command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
+endif
+
 " Common setting here
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -29,33 +60,3 @@ set number
 set hlsearch
 set ruler
 highlight Comment ctermfg=green
-
-" Try to load minpac
-packadd minpac
-packadd! onedark.vim
-
-if !exists('g:loaded_minpac')
-    " minpac is not available.
-    " Settings for plugin-less environment
-    ...
-else
-    " minpac is available
-    call minpac#init()
-    call minpac#add('k-takata/minpac', {'type' : 'opt'})
-    call minpac#add('joshdick/onedark.vim')
-    call minpac#add('itchyny/lightline.vim')
-    call minpac#add('majutsushi/Tagbar')
-    call minpac#add('preservim/nerdtree')
-
-    " Additional plugins here
-    
-    " Plugin setting here
-endif
-
-" Define user commands for updating/cleaning the plugins.
-if has('eval')
-    "Minpac commands
-    command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do' : 'call minpac#status()'})
-    command! PackClean packadd minpac | source $MYVIMRC | call minpac#clean()
-    command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
-endif
