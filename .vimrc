@@ -16,6 +16,8 @@ set nobackup
 setlocal noswapfile
 set bufhidden=hide
 
+set noerrorbells
+
 " Text
 set tabstop=2
 set softtabstop=2
