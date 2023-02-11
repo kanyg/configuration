@@ -21,7 +21,10 @@ else
     " Plugin setting here
     
     " NERDTree config
-    map <C-w> :NERDTreeToggle<CR>
+    " autocmd vimenter * NERDTree
+    map <C-t> :NERDTreeToggle<CR>
+    let g:NERDTreeDirArrowExpandable = '▸'
+    let g:NERDTreeDirArrowCollapsible = '▾'
 
 endif
 
