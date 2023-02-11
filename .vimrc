@@ -16,8 +16,12 @@ else
     call minpac#add('itchyny/lightline.vim')
     call minpac#add('majutsushi/Tagbar')
     call minpac#add('preservim/nerdtree')
+    " call minpac#add('kien/ctrlp')
     
     " Plugin setting here
+    
+    " NERDTree config
+    map <C-w> :NERDTreeToggle<CR>
 
 endif
 
