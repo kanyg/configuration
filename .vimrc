@@ -16,7 +16,7 @@ else
     call minpac#add('itchyny/lightline.vim')
     call minpac#add('majutsushi/Tagbar')
     call minpac#add('preservim/nerdtree')
-    " call minpac#add('kien/ctrlp')
+    call minpac#add('kien/ctrlp.vim')
     
     " Plugin setting here
     
@@ -25,6 +25,11 @@ else
     map <C-t> :NERDTreeToggle<CR>
     let g:NERDTreeDirArrowExpandable = '▸'
     let g:NERDTreeDirArrowCollapsible = '▾'
+
+    " ctrlp config
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
+    let g:ctrlp_working_path_mode = 'ra'
 
 endif
 
